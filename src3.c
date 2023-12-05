@@ -62,7 +62,12 @@ void draw() {
     }
     printf("\n\n");
 }
-
+/**
+* \brief Liste des conditions de victoire
+* \detail Répertorie toutes les combinaisons de cases 
+* qui mènent à la victoire d'un joueur
+*
+*/
 int winPossibilities[8][3] = {
     {0,1,2},
     {3,4,5},
@@ -164,6 +169,17 @@ int checkWinner() {
     }
     return 0;
 }
+/**
+* \brief Demande le numéro de case 
+* \detail Cette fonction demande le numéro de case dans lequel le joueur 
+* veut joeur 
+*
+* et de sauts de lignes
+* \return int Numéro d'identité de l'étudiant·e ajouté·e
+* \param char* nom Nom de l'étudiant·e.
+* \param char groupe_td Son groupe TD
+* \param int num_tp Son numéro de groupe TP
+*/
 
 int requestCaseNum() {
     int input;
