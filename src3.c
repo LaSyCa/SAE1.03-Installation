@@ -8,8 +8,8 @@
 * \author TZIKUNIB Neil et ZAPATA Pablo
 *
 * Ce programme propose de jouer à un jeu de morpion
-* de chaînes de caractères où les chaînes sont implémentées
-* par des listes chainées de caractères.
+* contre une I.A dans une grille 3x3
+* 
 *
 */
 /// Configuration
