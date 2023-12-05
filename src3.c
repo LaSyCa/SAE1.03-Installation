@@ -1,8 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/// Morpion en C par TZIKUNIB Neil et ZAPATA Pablo TT3
-
+/**
+*
+* \brief Programme de morpion en language C
+*
+* \author TZIKUNIB Neil et ZAPATA Pablo
+*
+* Ce programme propose de jouer à un jeu de morpion
+* de chaînes de caractères où les chaînes sont implémentées
+* par des listes chainées de caractères.
+*
+*/
 /// Configuration
 char* prefix = "[Morpion] ";
 char* symbols[] = {"X", "O"};
