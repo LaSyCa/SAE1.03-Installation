@@ -172,13 +172,9 @@ int checkWinner() {
 /**
 * \brief Demande le numéro de case 
 * \detail Cette fonction demande le numéro de case dans lequel le joueur 
-* veut joeur 
+* veut joueur et vérifie si cette case est libre, ou invalide.
 *
-* et de sauts de lignes
-* \return int Numéro d'identité de l'étudiant·e ajouté·e
-* \param char* nom Nom de l'étudiant·e.
-* \param char groupe_td Son groupe TD
-* \param int num_tp Son numéro de groupe TP
+* \return input (la variable contenant le numéro de la case à joueur)
 */
 
 int requestCaseNum() {
@@ -199,6 +195,12 @@ void applySelectionToCase(int caseId) {
     positions[(caseId-1)] = symbols[(currentPlayer-1)];
 }
 
+/**
+* \brief Permet le changment de tour
+* \detail 
+*
+* \return 
+*/
 void doTurn(int help, int isIa) {
     clearAll();
     if (help) {
