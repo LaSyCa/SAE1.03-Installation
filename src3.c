@@ -21,6 +21,7 @@ char* positions[9];
 int currentPlayer = 1;
 int turn = 1;
 
+
 void separator() {
     printf("\n------------------------------");
 
