@@ -1,36 +1,44 @@
+/**
+* Programme complet d'un jeu de morpion joueur contre I.A dans une grille 3x3
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
-*
-* \brief Programme de morpion en language C
-*
-* \author TZIKUNIB Neil et ZAPATA Pablo
-*
-* Ce programme propose de jouer à un jeu de morpion
-* contre une I.A dans une grille 3x3
-* 
-*
-*/
 /// Configuration
-char* prefix = "[Morpion] ";
-char* symbols[] = {"X", "O"};
+char* prefix = "[Morpion] "; /** Nom du jeu */
+char* symbols[] = {"X", "O"}; /** Définition des symboles de jeux pour différencier les joueurs*/
+
 
 /// Variables principales
-char* positions[9];
-int currentPlayer = 1;
-int turn = 1;
+char* positions[9]; /** Ensemble des cases présentes dans la grille (3x3) */
+int currentPlayer = 1; /** Joueur dont c'est le tour de joueur  */
+int turn = 1; /** Nombre du tour */
 
+/**
+* \brief Affiche un trait de séparation (Résumé court du rôle de la fonction)
+* \detail La procédure écrit à l'écran un trait de séparation composé de caractères "-"
+* avec un retour à la ligne.
+*/
 
 void separator() {
     printf("\n------------------------------");
 
 }
+/**
+* \brief 
+* \detail 
+*
+*/
 
 void clearAll() {
     system("cls");
 }
-
+/**
+* \brief 
+* \detail 
+*
+*/
 void init() {
     int i;
     for (i = 0; i < 9; i++) {
@@ -39,7 +47,11 @@ void init() {
     printf("%sJeu du morpion par Pablo Z. et Neil T.", prefix);
 
 }
-
+/**
+* \brief 
+* \detail 
+*
+*/
 void draw() {
     int i;
     for (i = 0; i < 9; i++) {
@@ -110,6 +122,18 @@ int aiGetCase() {
     return failOverCase;
 }
 
+/**
+* \brief Vérifie la victoire d'un joueur ou I.A
+* \detail La fonction vérifie les positions des symboles
+* chaque joueur pour voir si la condition de victoire est
+*présente chez l'un des joueurs ou si un match nul est présent
+* Il vérifie successivement les lignes, colonnes et diagonales
+* dans toute la grille
+* 
+* \return 100 si il s'agit d'un match nul
+* \return (i+1) si il s'agit de la victoire d'un joueur
+* \return 0 dans tous les cas
+*/
 
 int checkWinner() {
     int i;
