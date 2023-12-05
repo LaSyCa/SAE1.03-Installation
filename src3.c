@@ -1,7 +1,7 @@
 /**
-* Programme complet d'un jeu de morpion joueur contre I.A dans une grille 3x3
-*/
-
+ * @file morpion.c
+ * @brief Programme de jeu de Morpion (Tic Tac Toe) joueur contre IA dans une grille 3x3.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,30 +15,24 @@ char* positions[9]; /** Ensemble des cases présentes dans la grille (3x3) */
 int currentPlayer = 1; /** Joueur dont c'est le tour de joueur  */
 int turn = 1; /** Nombre du tour */
 
-/**
-* \brief Affiche un trait de séparation (Résumé court du rôle de la fonction)
-* \detail La procédure écrit à l'écran un trait de séparation composé de caractères "-"
-* avec un retour à la ligne.
-*/
 
+/**
+ * @brief Affiche une séparation visuelle dans la console.
+ */
 void separator() {
     printf("\n------------------------------");
 
 }
-/**
-* \brief 
-* \detail 
-*
-*/
 
+/**
+ * @brief Efface tout le contenu
+ */
 void clearAll() {
     system("cls");
 }
 /**
-* \brief 
-* \detail 
-*
-*/
+ * @brief Initialise l'affichage du jeu par défaut pour commencer le jeu.
+ */
 void init() {
     int i;
     for (i = 0; i < 9; i++) {
@@ -48,10 +42,9 @@ void init() {
 
 }
 /**
-* \brief 
-* \detail 
-*
-*/
+ * @brief Affiche la grille de jeu
+ * Utilise les symboles pour représenter les cases occupées par chaque joueur.
+ */
 void draw() {
     int i;
     for (i = 0; i < 9; i++) {
@@ -63,11 +56,8 @@ void draw() {
     printf("\n\n");
 }
 /**
-* \brief Liste des conditions de victoire
-* \detail Répertorie toutes les combinaisons de cases 
-* qui mènent à la victoire d'un joueur
-*
-*/
+ * @brief Tableau représentant toutes les combinaisons qui mènent à la victoire d'un joueur
+ */
 int winPossibilities[8][3] = {
     {0,1,2},
     {3,4,5},
@@ -78,7 +68,11 @@ int winPossibilities[8][3] = {
     {0,4,8},
     {2,4,6}
 };
-
+/**
+ * @brief Sélectionne la case pour l'IA
+ *
+ * @return Le numéro de la case choisie par l'IA.
+ */
 int aiGetCase() {
     /// Mon symbole
     char* symbol = symbols[1];
@@ -126,20 +120,11 @@ int aiGetCase() {
     /// Aucun combo fiable trouvé, l'IA retourne une case libre quelconque
     return failOverCase;
 }
-
 /**
-* \brief Vérifie la victoire d'un joueur ou I.A
-* \detail La fonction vérifie les positions des symboles
-* chaque joueur pour voir si la condition de victoire est
-*présente chez l'un des joueurs ou si un match nul est présent
-* Il vérifie successivement les lignes, colonnes et diagonales
-* dans toute la grille
-* 
-* \return 100 si il s'agit d'un match nul
-* \return (i+1) si il s'agit de la victoire d'un joueur
-* \return 0 dans tous les cas
-*/
-
+ * @brief Vérifie s'il y a un gagnant ou si la partie est nulle.
+ *
+ * @return 0 si aucun gagnant, 1 si le joueur 1 gagne, 2 si le joueur 2 (IA) gagne, 100 si match nul.
+ */
 int checkWinner() {
     int i;
     /// Match nul
@@ -170,13 +155,10 @@ int checkWinner() {
     return 0;
 }
 /**
-* \brief Demande le numéro de case 
-* \detail Cette fonction demande le numéro de case dans lequel le joueur 
-* veut joueur et vérifie si cette case est libre, ou invalide.
-*
-* \return input (la variable contenant le numéro de la case à joueur)
-*/
-
+ * @brief Demande au joueur de choisir une case et vérifie la validité de la saisie.
+ *
+ * @return input Le numéro de la case choisi par le joueur
+ */
 int requestCaseNum() {
     int input;
     scanf("%d", &input);
@@ -190,17 +172,20 @@ int requestCaseNum() {
     }
     return input;
 }
-
+/**
+ * @brief Demande à l'utilisateur ou à l'IA de choisir une case et applique la sélection.
+ *
+ * @param caseId L'identifiant de la case choisie.
+ */
 void applySelectionToCase(int caseId) {
     positions[(caseId-1)] = symbols[(currentPlayer-1)];
 }
-
 /**
-* \brief Permet le changment de tour
-* \detail 
-*
-* \return 
-*/
+ * @brief Réalise un tour de jeu pour que ça gère les actions du joueur et de l'IA.
+ *
+ * @param help Indique si le message d'aide doit être affiché.
+ * @param isIa Indique si l'IA joue.
+ */
 void doTurn(int help, int isIa) {
     clearAll();
     if (help) {
@@ -229,7 +214,11 @@ void doTurn(int help, int isIa) {
     if(currentPlayer > 2) currentPlayer = 1;
     doTurn(0, isIa);
 }
-
+/**
+ * @brief Fonction principale du jeu Morpion.
+ *
+ * @return La valeur de retour du programme.
+ */
 int main()
 {
     init();
