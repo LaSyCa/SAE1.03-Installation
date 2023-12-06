@@ -5,12 +5,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**********************
+      * DEFINES *
+***********************/
 
-#define DEFAULT_SPEED 5 /** Vitesse par défaut pour une opération. */
-#define DEFAULT_SPEED 5
+/**
+ * @def MAX_PLAYERS
+ * @brief Définit le nombre maximum de joueurs autorisés dans le jeu.
+ */
+#define MAX_PLAYERS 4
 
-/** Valeur maximale de santé pour un personnage. */
-#define MAX_HEALTH 100
+/**
+ * @def VIDE
+ * @brief Définit les cases vides à 0
+ */
+#define VIDE 0
 
 /**********************
   * VARIABLE GLOBAL *
