@@ -41,7 +41,7 @@
 
 /**
 *
-* \typedef struct
+* \struct tCase1
 *
 * \brief type structure des données sur la case d'une grille de SUDOKU
 *
