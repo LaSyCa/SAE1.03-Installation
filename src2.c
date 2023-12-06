@@ -57,6 +57,22 @@ typedef struct {
 
 /**
 *
+* \struct tCase2
+*
+* \brief type structure des données sur la case d'une grille de SUDOKU
+*
+* Le type struct contient des données sur les nombres pouvant être placés ou non
+* dans la case concernée.
+*
+*/
+typedef struct {
+    int valeur;
+    int candidats[TAILLE+1];
+    int nbCandidats;
+} tCase2;
+
+/**
+*
 * \typedef  tGrille
 *
 * \brief type tableau de TAILLE*TAILLE nombre entier
