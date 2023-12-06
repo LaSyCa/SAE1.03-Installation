@@ -5,20 +5,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/// Configuration
+
+#define MAX_PLAYERS 4 /** Nom du jeu */
+#define 
+
+/**********************
+  * VARIABLE GLOBAL *
+***********************/
 char* prefix = "[Morpion] "; /** Nom du jeu */
 char* symbols[] = {"X", "O"}; /** Définition des symboles de jeux pour différencier les joueurs*/
-
-
-/// Variables principales
 char* positions[9]; /** Ensemble des cases présentes dans la grille (3x3) */
 int currentPlayer = 1; /** Joueur dont c'est le tour de joueur  */
 int turn = 1; /** Nombre du tour */
 
-/**
- * @struct GameSettings
- * @brief Contient les paramètres de difficulté, de maximum de joueur et le nom du jeu
- */
+/*****************
+  * STRUCTURES *
+******************/
 struct GameSettings { //Structure crée uniquement pour le doxygen
     int difficulty; /** Niveau de difficulté du jeu (facile, moyen, difficile). */
     int maxPlayers; /** Nombre maximum de joueurs autorisés dans le jeu. */
@@ -33,7 +35,9 @@ struct Player { //Structure crée uniquement pour le doxygen
     int playerId; /** Identifiant pour discerner le joueur unique à chaque joueur. */
     char playerName[50]; /** Nom du joueur. */
 };
-
+/***********************
+ * FONCTION/PROCEDURE *
+************************/
 /**
  * @brief Affiche une séparation visuelle dans la console.
  */
@@ -232,6 +236,9 @@ void doTurn(int help, int isIa) {
     if(currentPlayer > 2) currentPlayer = 1;
     doTurn(0, isIa);
 }
+/*****************************************************
+              * PROGRAMME PRINCIPAL *
+*****************************************************/
 /**
  * @brief Fonction principale du jeu Morpion.
  *
