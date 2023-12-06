@@ -33,13 +33,28 @@
 // Variables globales //
 ////////////////////////
 
-/** Nom de l'exécutable */
+/**
+*
+* \var char *nom_prog
+*
+* \brief Nom de l'exécutable
+*/
 static char *nom_prog;
 
-/** Nombre de ligne */
+/**
+*
+* \var int ligne 
+*
+* \brief Nombre de ligne
+*/
 int ligne = 10 ;
 
-/** Nombre de colonne*/
+/**
+*
+* \var int colonne 
+*
+* \brief Nombre de colonne
+*/
 int colonne = 10 ;
 
 ////////////////////////
