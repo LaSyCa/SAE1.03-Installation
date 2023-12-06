@@ -6,8 +6,11 @@
 #include <stdlib.h>
 
 
-#define MAX_PLAYERS 4 /** Nom du jeu */
-#define 
+#define DEFAULT_SPEED 5 /** Vitesse par défaut pour une opération. */
+#define DEFAULT_SPEED 5
+
+/** Valeur maximale de santé pour un personnage. */
+#define MAX_HEALTH 100
 
 /**********************
   * VARIABLE GLOBAL *
