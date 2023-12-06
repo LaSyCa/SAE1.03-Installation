@@ -97,6 +97,24 @@ typedef int tGrille[TAILLE][TAILLE];
 */
 typedef int tGrilleN[N][N];
 
+/**
+*
+* \var int erreur
+*
+* \brief variable servant à stocker le nombre d'erreur du joueur
+*
+*/
+int erreur = 0;
+
+/**
+*
+* \var int erreur
+*
+* \brief variable servant à stocker le nombre de partie du joueur
+*
+*/
+int parties = 0;
+
 // PROTOTYPES
 
 void chargerGrille(tGrille g);
