@@ -15,6 +15,24 @@ char* positions[9]; /** Ensemble des cases présentes dans la grille (3x3) */
 int currentPlayer = 1; /** Joueur dont c'est le tour de joueur  */
 int turn = 1; /** Nombre du tour */
 
+/**
+ * @struct GameSettings
+ * @brief Contient les paramètres de difficulté, de maximum de joueur et le nom du jeu
+ */
+struct GameSettings { //Structure crée uniquement pour le doxygen
+    int difficulty; /** Niveau de difficulté du jeu (facile, moyen, difficile). */
+    int maxPlayers; /** Nombre maximum de joueurs autorisés dans le jeu. */
+    char gameName[100]; /** Nom du jeu. */
+};
+
+/**
+ * @struct Player
+ * @brief Représente un joueur dans le jeu.
+ */
+struct Player { //Structure crée uniquement pour le doxygen
+    int playerId; /** Identifiant pour discerner le joueur unique à chaque joueur. */
+    char playerName[50]; /** Nom du joueur. */
+};
 
 /**
  * @brief Affiche une séparation visuelle dans la console.
