@@ -43,11 +43,9 @@
 *
 * \typedef struct
 *
-* \brief type structure de TAILLE*TAILLE nombre entier
+* \brief type structure des informations sur une case de SUDOKU
 *
-* Le type tGrille sert de stockage pour les éléments d'un fichier .sud 
-* et pour les valeurs ajoutées aux différentes cases (nombres entiers) 
-* par l'utilisateur
+* Le type struct
 *
 */
 typedef struct {
