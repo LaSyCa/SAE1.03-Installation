@@ -11,11 +11,66 @@
 #include "ihm/menu.h"
 
 ////////////////////////
+//     Constante      //
+////////////////////////
+
+/**
+*
+* \def TAILLE
+*
+* \brief sert a définir la taille du tableau
+*/
+# define TAILLE 10
+
+/**
+*
+* \def TAILLE
+*
+* \brief sert a définir la taille du tableau
+*/
+# define MAX_BATEAU 20
+////////////////////////
 // Variables globales //
 ////////////////////////
 
-/* Nom de l'exécutable */
+/** Nom de l'exécutable */
 static char *nom_prog;
+
+/** Nombre de ligne */
+int ligne = 10 ;
+
+/** Nombre de colonne*/
+int colonne = 10 ;
+
+////////////////////////
+//TABLEAU ET STRUCTURE//
+////////////////////////
+
+/**
+*
+* \struct tCase1
+*
+* \brief contient les données d'une case vide
+*
+*/
+type struct {
+	int valeur;
+	int colonne;
+	int ligne;
+} tCase1;
+
+/**
+*
+* \struct tCase2
+*
+* \brief contient les données d'une case pleine
+*
+*/
+type struct{
+	int valeur;
+	int colonne;
+	int ligne;
+} tCase2;
 
 /////////////////////////////////////////
 // Handlers des arguments de lancement //
