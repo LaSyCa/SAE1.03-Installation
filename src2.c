@@ -62,12 +62,12 @@ typedef struct {
 * \brief type structure des données sur la case d'une grille de SUDOKU
 *
 * Le type struct contient des données sur les nombres pouvant être placés ou non
-* dans la case concernée.
+* dans la case concernée en fonction d'un tableau de true et de false
 *
 */
 typedef struct {
     int valeur;
-    int candidats[TAILLE+1];
+    bool candidats[TAILLE+1];
     int nbCandidats;
 } tCase2;
 
@@ -84,6 +84,18 @@ typedef struct {
 */
 typedef int tGrille[TAILLE][TAILLE];
 
+/**
+*
+* \typedef  tGrilleN
+*
+* \brief type tableau de N*N nombre entier
+*
+* Le type tGrilleN sert de stockage pour les éléments d'un fichier .sud grille de taille N*N 
+* et pour les valeurs ajoutées aux différentes cases (nombres entiers) 
+* par l'utilisateur
+*
+*/
+typedef int tGrilleN[N][N];
 
 // PROTOTYPES
 
