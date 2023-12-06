@@ -41,6 +41,23 @@
 
 /**
 *
+* \typedef struct
+*
+* \brief type structure de TAILLE*TAILLE nombre entier
+*
+* Le type tGrille sert de stockage pour les éléments d'un fichier .sud 
+* et pour les valeurs ajoutées aux différentes cases (nombres entiers) 
+* par l'utilisateur
+*
+*/
+typedef struct {
+    int valeur;
+    int candidats[TAILLE];
+    int nbCandidats;
+} tCase1;
+
+/**
+*
 * \typedef  tGrille
 *
 * \brief type tableau de TAILLE*TAILLE nombre entier
