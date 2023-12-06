@@ -43,9 +43,10 @@
 *
 * \typedef struct
 *
-* \brief type structure des informations sur une case de SUDOKU
+* \brief type structure des données sur la case d'une grille de SUDOKU
 *
-* Le type struct
+* Le type struct contient des données sur les nombres pouvant être placés ou non
+* dans la case concernée.
 *
 */
 typedef struct {
